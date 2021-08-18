@@ -1,0 +1,119 @@
+
+.product-wrapper {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .left-links {
+        list-style: none;
+        padding: 0;
+        margin:0;
+        font-family: 'robotobold';
+
+        & > li {
+            border:1px solid #d9d9d9;
+            border-bottom: 0px solid #d9d9d9;
+            border-left: 3px solid #d9d9d9;
+            padding: 20px 10px;
+            color: #808080;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -ms-transition: all 0.5s ease-in-out;
+            -webkit-transition: all 0.5s ease-in-out;
+            
+            &:hover {
+                background-color: rgba(191, 191, 191, 0.3);
+                color: #000;
+                border-left: 3px solid #0079ad;
+            }
+
+            &:last-child {
+                border-bottom: 1px solid #d9d9d9;
+            }
+        }
+    }
+    
+    h3 {
+        font-family: 'robotobold';
+    }
+
+    p {
+        font-family: 'robotoregular';
+    }
+
+    b {
+        font-family: 'robotobold';
+    }
+
+    .document-wrapper {
+        margin-top: 30px;
+        & > b {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        & > ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            & > li {
+                padding: 20px 10px;
+                border:1px solid #d9d9d9;
+                border-bottom: 0px solid #d9d9d9;
+                font-family: 'robotoregular';
+                letter-spacing: 1px;
+
+                svg {
+                    width: 25px;
+                    height: 25px;
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+
+                a {
+                    color: #000;
+                    text-decoration: none;
+                    display: inline-block;
+                }
+
+                &:last-child {
+                    border-bottom: 1px solid #d9d9d9;
+                }
+            }
+        }
+    }
+}
+
+h4 {
+    font-family: 'robotobold';
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+.feature-wrapper {
+    padding-top:0px;
+
+    .feature-list {
+        margin-top: 20px;
+        border: 1px solid #d9d9d9;
+        margin-bottom: 10px;
+        strong {
+            font-family: "robotobold";
+            display: block;
+            padding: 10px 15px;
+            background: rgba(115, 115, 115, 0.1);
+            color: #000;
+            border-bottom: 1px solid #d9d9d9;
+        }
+
+        p {
+            font-family: 'robotoregular';
+            margin-bottom: 0;
+            padding: 10px 15px;
+        }
+    }
+}

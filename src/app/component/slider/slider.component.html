@@ -1,0 +1,34 @@
+<div class="slider-wrapper">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+
+        <div
+          *ngFor="let car of carousel; let i = index"
+          class="item" [ngClass]="{'active': i === 0}"
+          style="background-image: url(../../../assets/img/carousel/{{car.img}})"
+          >
+          <!-- <img src="../../../assets/img/carousel/{{car.img}}" [alt]="car.alt"> -->
+          <div class="carousel-caption container">
+            <h3 [innerHTML]="car.heading"></h3>
+            <p>{{car.paragraph}}</p>
+            <button class="btn btn-primary more" (click)="gotoProduct(car)" *ngIf="car.imgListId && car.subCategoryId">Read More </button>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left">
+            <img src="../../../assets/img/right-arrow.png" alt="arrow" class="img-responsive" />
+        </span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right">
+          <img src="../../../assets/img/right-arrow.png" alt="arrow" class="img-responsive" />
+        </span>
+      </a>
+
+
+
+    </div>
+  </div>

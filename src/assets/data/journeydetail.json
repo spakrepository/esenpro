@@ -1,0 +1,68 @@
+[
+  {
+    "id":1,
+    "imgUrl": "1.jpg",
+    "altText": "2013 Order worth 2.6 Crs awarded by Mukand Ltd. for crane duty gearbox (NMDC Project)",
+    "description": "2013 Order worth 2.6 Crs awarded by Mukand Ltd. for crane duty gearbox (NMDC Project)"
+  },
+  {
+    "id":2,
+    "imgUrl": "1.jpg",
+    "altText": "2012 New Product development for crane application",
+    "description": "2012 New Product development for crane application"
+  },
+  {
+    "id":3,
+    "imgUrl": "1.jpg",
+    "altText": "2003 Supplied 105 Aerator Gear Units of 50 HP to VA Tech Wabag",
+    "description": "2003 Supplied 105 Aerator Gear Units of 50 HP to VA Tech Wabag"
+  },
+  {
+    "id":4,
+    "imgUrl": "1.jpg",
+    "altText": "2001 Designed and manufactured 15000 KW Mill Duty Gear Unit for 4HI, 6HI, ETR, DTR application",
+    "description": "2001 Designed and manufactured 15000 KW Mill Duty Gear Unit for 4HI, 6HI, ETR, DTR application"
+  },
+  {
+    "id":5,
+    "imgUrl": "1.jpg",
+    "altText": "2000 Certified ISO 9001:2000 by TUV SUD",
+    "description": "2000 Certified ISO 9001:2000 by TUV SUD"
+  },
+  {
+    "id":6,
+    "imgUrl": "1.jpg",
+    "altText": "1989 Manufactured custom helical geared motor for MUSCO for their Blooming Mill",
+    "description": "1989 Manufactured custom helical geared motor for MUSCO for their Blooming Mill"
+  },
+  {
+    "id":7,
+    "imgUrl": "1.jpg",
+    "altText": "1978 First Gear Grinding Machine commissioned",
+    "description": "1978 First Gear Grinding Machine commissioned"
+  },
+  {
+    "id":8,
+    "imgUrl": "1.jpg",
+    "altText": "alternative text",
+    "description": "Lorem Ipsum"
+  },
+  {
+    "id":9,
+    "imgUrl": "1.jpg",
+    "altText": "1975 Hardened and Ground Technology developed for Helical Gear Unit",
+    "description": "1975 Hardened and Ground Technology developed for Helical Gear Unit"
+  },
+  {
+    "id":10,
+    "imgUrl": "1.jpg",
+    "altText": "1970 Second Manufacturing Unit in Valsad, Gujarat",
+    "description": "1970 Second Manufacturing Unit in Valsad, Gujarat"
+  },
+  {
+    "id":11,
+    "imgUrl": "1.jpg",
+    "altText": "1960 First Manufacturing Unit in Mumbai",
+    "description": "1960 First Manufacturing Unit in Mumbai"
+  }
+]

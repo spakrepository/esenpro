@@ -1,0 +1,56 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <img src="../../../assets/img/footer-logo.png" alt="logo" class="img-responsive footer-logo" />
+                <img src="../../../assets/img/footer-transmissin-logo.png" alt="logo" class="img-responsive footer-transmission-logo" />
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 footer-links">
+                        <strong>Quick Links</strong>
+                        <table class="footer-links-table">
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li (click)="goto('home')">Home</li>
+                                        <li (click)="goto('about')">About Us</li>
+                                        <li (click)="goto('service')">Service</li>
+                                        <li (click)="goto('events')">News & Events</li>
+                                    </ul>
+                                </td>
+                                <td style="vertical-align: top;">
+                                    <ul>
+                                        <li (click)="goto('career')">Career</li>
+                                        <li (click)="goto('contact')">Contact</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <strong>Follow us</strong>
+                        <app-social-media [alignment]="'left'" [paddingTop]="'0px'"></app-social-media>
+                        <b>Esenpro Home</b>
+                        <p>
+                            24 Marol Co-op Ind. Est. Ltd.,Off.M.V.Rd.,
+                            <br />
+                            Andheri(E), Mumbai 400 059
+                        </p>
+                        <p>
+                            T: +91 (22) 2850 5132 / 3685
+                            <br />
+                            E: marketing@esenpro.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="after-footer">
+            <p>© {{currentYear}} Esenpro Power Transmission Pvt Ltd. All rights reserved.</p>
+        </div>
+    </div>
+
+</footer>

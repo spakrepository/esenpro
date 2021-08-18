@@ -1,0 +1,14 @@
+<div class="banner-wrapper">
+    <img src="../../../assets/img/banner/{{img}}" [alt]="header" class="img-responsive img" *ngIf="img" />
+    <div>
+      <div>
+        <h1 class="text-center" *ngIf="header">{{header}}</h1>
+        <ul class="banner-list">
+            <li (click)="goto()" class="pointer">Home</li>
+            <li *ngIf="subHeader" class="without-cursor">{{subHeader}}</li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+

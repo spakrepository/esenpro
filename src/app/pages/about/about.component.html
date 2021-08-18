@@ -1,0 +1,201 @@
+<app-header></app-header>
+<app-banner *ngIf="getWindowWidth() > 768" [img]="'../../../assets/img/banner/about.jpg'" [header]="'About Us'" [subHeader]="'About Us'"></app-banner>
+<app-banner *ngIf="getWindowWidth() < 768" [img]="'../../../assets/img/banner/mob/about-us.jpg'" [header]="'About Us'" [subHeader]="'About Us'"></app-banner>
+
+<div class="about-wrapper">
+
+    <div class="container">
+        <h3>The Brand 'Esenpro'</h3>
+        <div>
+            <p>
+              We are pleased to introduce to you “ESENPRO”, a brand of Essential Power Transmission Pvt. Ltd., India, established in 1947. Esenpro is a 3rd generation family business having its manufacturing unit in Gujarat and Head Quarters in Mumbai.
+            </p>
+            <p>
+              Esenpro is a leading manufacturer and exporter of Standard and Custom Built Industrial Gearboxes. We are an ISO 9001:2015 certified company by TUV SUD. With a wide product range, Esenpro has multiple installations globally in the steel, cement, plastic, mining, power, overhead cranes, port, and chemical industries.
+            </p>
+            <p>
+              The manufacturing unit is equipped with the state of the art CNC machines and other infrastructural equipment to produce high-quality gears. In-house manufacturing includes Shaft and Blank Turning, Gear Hobbing, Heat treatment, Cylindrical Grinding, Gear Teeth Profile Grinding.
+            </p>
+            <p>
+              Our team includes experienced technocrats and application engineers who are designing gearboxes to best suit the end-user application. By using the latest design software and simulation modules we are confident that Esenpro delivers gearboxes that are of the highest quality standard.
+            </p>
+            <p>
+              We have always given utmost priority to QUALITY, and that has been our drive to success.
+            </p>
+            <p>
+              We thank you for visiting our website and we look forward to working with you.
+            </p>
+        </div>
+    </div>
+
+    <div class="container mission-vision">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="vision">
+                <h3>Vision</h3>
+                <p>Esenpro continuously upgrades its designs & standards, which enables us to manufacture quality gearboxes. Esenpro employees are our prime assets, and motivating them is our key objective.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="mission">
+                <h3>Mission</h3>
+                <p>
+                    Esenpro provides end to end gearing solutions for varied applications in the engineering industry. Our dedication to Quality will pave the way to be the emerging leaders in the gearbox market.
+                </p>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-p-0">
+        <img src="../../../assets/img/Esenpro-About-Us.jpg" alt="image" class="img-responsive" />
+    </div>
+
+    <div class="container chairman" *ngIf="false">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngIf="false">
+          <div class="chairman-wrapper">
+            <h3>Chairman's Message</h3>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="profile">
+            <p data-toggle="modal" data-target="#myModal" (click)="toggleChairmanCompanypro('chairman')">
+              <span>Click to view</span>
+              <img src="../../../assets/img/right-t.png" alt="right t" class="img-responsive right-t" />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isJourneyVisible" class="container">
+      <h3>Our Journey</h3>
+      <div>
+          <ul class="list-inline journey-year-ul">
+            <li *ngFor="let year of journeyYearList" (click)="gotoJourney(year); currentYear = year.id">
+              <img *ngIf="currentYear != year.id" src="../../../assets/img/journey/grey-bg.png" alt="icon" class="img-responsive" />
+              <img *ngIf="currentYear == year.id" src="../../../assets/img/journey/blue-bg.png" alt="icon" class="img-responsive" />
+              <span>{{year.year}}</span>
+            </li>
+          </ul>
+
+          <div class="jouney-detail-wrapper" *ngIf="journeyDetail">
+            <div>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <img src="../../../assets/img/journey/{{journeyDetail.imgUrl}}" [alt]="journeyDetail.altText" class="img-responsive" />
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="right-blue-bg">
+                      <h3 *ngIf="journeyDetail.description" class="text-center">{{journeyDetail.description}}</h3>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+      </div>
+  </div>
+
+</div>
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" *ngIf="toggleChairmanCompanyProfile == 'chairman'">Chairman's Message</h4>
+          <h4 class="modal-title" *ngIf="toggleChairmanCompanyProfile == 'company'">Company Profile</h4>
+        </div>
+        <div class="modal-body">
+            <div class="chairman-profile-wrapper" *ngIf="toggleChairmanCompanyProfile == 'chairman'">
+                <table class="chairman">
+                    <tr>
+                        <td>
+                          <i class="fas fa-quote-left"></i>
+                        </td>
+                        <td>
+                            <p>Dear All,</p>
+                            <p>
+                              I take the pleasure and privilege to each and every member of ESENPRO Group Company, for their stupendous efforts in making ESENPRO, a prominent brand in the field of manufacturing all types of Gear-boxes and geared motors in all sectors of engineering industries.
+                            </p>
+                            <p>
+                              India is witnessing reasonably slow economic growth due to reforms and inflation to cater to the versatile applications of all engineering sectors. This is an excellent opportunity for all of us, to raise our level of performance and face the challenge with positive spirit.
+                            </p>
+                            <p>
+                              We are in the process of working out radical changes in the organization with respect to identify and hone the skills of individuals and forge ahead with strategical ideas for marketing revolutions and strengthen our relationship with the customers. We shall give utmost importance to provide training to the deserving people of various departments and improvise our competent design expertise and have edge over our competitors to a great extent.
+                            </p>
+                            <p>
+                              I hereby give you all confidence to provide you all the adequate facilities in the working environment and I hope you will enhance your positive attitude and take corrective measures which will help us to work with harmony and good team spirit. This will help all of us to face the business challenges in this competitive market with an understanding of “Hard work yields PROFITS and Idle talk bring WANTS”.
+                            </p>
+                            <p>
+                              I sincerely wish each and every one All the Best and look forward for Company’s growth.
+                            </p>
+                        </td>
+                        <td>
+                          <i class="fas fa-quote-right"></i>
+                        </td>
+                    </tr>
+                </table>
+                <table  class="profile-name">
+                    <tr>
+                        <td></td>
+                        <td>
+                          <table>
+                              <tr>
+                                  <td>
+                                      <strong>Shri Kashyap C Shah</strong>
+                                      <br />
+                                      CMD
+                                    </td>
+                                  <td>
+                                      <div>
+                                          <strong>Shri Bharat C Shah</strong>
+                                          <br />
+                                          Technical Director
+                                      </div>
+                                  </td>
+                              </tr>
+                          </table>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="company-profile-wrapper" *ngIf="toggleChairmanCompanyProfile == 'company'">
+                <table class="chairman">
+                    <tr>
+                        <td>
+                          <i class="fas fa-quote-left"></i>
+                        </td>
+                        <td>
+                            <p>Dear All,</p>
+                            <p>
+                              I take the pleasure and privilege to each and every member of ESENPRO Group Company, for their stupendous efforts in making ESENPRO, a prominent brand in the field of manufacturing all types of Gear-boxes and geared motors in all sectors of engineering industries.
+                            </p>
+                            <p>
+                              India is witnessing reasonably slow economic growth due to reforms and inflation to cater to the versatile applications of all engineering sectors. This is an excellent opportunity for all of us, to raise our level of performance and face the challenge with positive spirit.
+                            </p>
+                            <p>
+                              We are in the process of working out radical changes in the organization with respect to identify and hone the skills of individuals and forge ahead with strategical ideas for marketing revolutions and strengthen our relationship with the customers. We shall give utmost importance to provide training to the deserving people of various departments and improvise our competent design expertise and have edge over our competitors to a great extent.
+                            </p>
+                            <p>
+                              I hereby give you all confidence to provide you all the adequate facilities in the working environment and I hope you will enhance your positive attitude and take corrective measures which will help us to work with harmony and good team spirit. This will help all of us to face the business challenges in this competitive market with an understanding of “Hard work yields PROFITS and Idle talk bring WANTS”.
+                            </p>
+                            <p>
+                              I sincerely wish each and every one All the Best and look forward for Company’s growth.
+                            </p>
+                        </td>
+                        <td>
+                          <i class="fas fa-quote-right"></i>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<app-footer></app-footer>

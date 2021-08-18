@@ -1,0 +1,209 @@
+[
+  {
+    "id": 2,
+    "imgUrl": "1.jpg",
+    "altText": "Name",
+    "name": "Name",
+    "designation": "Designation",
+    "email": "",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "managementteam"
+  },
+  {
+    "id": 3,
+    "imgUrl": "1.jpg",
+    "altText": "Name",
+    "name": "Name",
+    "designation": "Designation",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "managementteam"
+  },
+  {
+    "id": 4,
+    "imgUrl": "1.jpg",
+    "altText": "Name",
+    "name": "Name",
+    "designation": "Designation",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "managementteam"
+  },
+  {
+    "id": 5,
+    "imgUrl": "1.jpg",
+    "altText": "Name",
+    "name": "Name",
+    "designation": "Designation",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "managementteam"
+  },
+  {
+    "id": 6,
+    "imgUrl": "bs-singh.jpg",
+    "altText": "BS Singh",
+    "name": "BS Singh",
+    "designation": "Head of Accounts and Admin",
+    "email": "bssingh@esenpro.com",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "coreteam"
+  },
+  {
+    "id": 7,
+    "imgUrl": "chandrashekar-poojary.jpg",
+    "altText": "Chandrashekar Poojary",
+    "name": "Chandrashekar Poojary",
+    "designation": "Purchase Manager",
+    "email": "purchase@esenpro.com",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "coreteam"
+  },
+  {
+    "id": 8,
+    "imgUrl": "chetankumar-prajapati.jpg",
+    "altText": "Chetankumar Prajapati",
+    "name": "Chetankumar Prajapati",
+    "designation": "General Manager Design and Engineering",
+    "email": "cbp@esenpro.com",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "coreteam"
+  },
+  {
+    "id": 9,
+    "imgUrl": "kinnar-patel.jpg",
+    "altText": "Kinnar Patel",
+    "name": "Kinnar Patel",
+    "designation": "Manager Dispatch and Logistics",
+    "email": "krp@esenpro.com",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "coreteam"
+  },
+  {
+    "id": 10,
+    "imgUrl": "kirti-parab.jpg",
+    "altText": "Kirti Parab",
+    "name": "Kirti Parab",
+    "designation": "Manager Commercials and Contracts",
+    "email": "kirti@esenpro.com",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "coreteam"
+  },
+  {
+    "id": 11,
+    "imgUrl": "sajit-nair.jpg",
+    "altText": "Sajit Nair",
+    "name": "Sajit Nair",
+    "designation": "Head Projects and Quality Control",
+    "email": "sajitnair@esenpro.com",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "coreteam"
+  },
+  {
+    "id": 12,
+    "imgUrl": "satish-patel.jpg",
+    "altText": "Satish Patel",
+    "name": "Satish Patel",
+    "designation": "Manager Production",
+    "email": "sjp@esenpro.com",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "coreteam"
+  },
+  {
+    "id": 14,
+    "imgUrl": "tejashpatel.jpg",
+    "altText": "Tejash Patel",
+    "name": "Tejash Patel",
+    "designation": "Manager Quality Control",
+    "email": "trp@esenpro.com",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "coreteam"
+  },
+  {
+    "id": 15,
+    "imgUrl": "umesh-nigam.jpg",
+    "altText": "Umesh Nigam",
+    "name": "Umesh Nigam",
+    "designation": "General Manager Domestic Sales",
+    "email": "umesh@esenpro.com",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "coreteam"
+  },
+  {
+    "id": 16,
+    "imgUrl": "vipul-kiyada.jpg",
+    "altText": "Vipul Kiyada",
+    "name": "Vipul Kiyada",
+    "designation": "Head of Planning and Operations",
+    "email": "vdk@esenpro.com",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "coreteam"
+  },
+  {
+    "id": 17,
+    "imgUrl": "d-deenabandhu.jpg",
+    "altText": "D Deenabandhu",
+    "name": "D Deenabandhu",
+    "designation": "Head of Engineering Crane Duty Gearbox",
+    "email": "dbd@esenpro.com",
+    "detail": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ],
+    "type": "coreteam"
+  }
+]

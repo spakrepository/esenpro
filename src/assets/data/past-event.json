@@ -1,0 +1,39 @@
+[
+    {
+        "id":1,
+        "image":"../../../assets/img/events/1.png",
+        "alternativeText":"Hannover Messe 2018",
+        "heading":"Hannover Messe 2018"
+    },
+    {
+        "id":2,
+        "image":"../../../assets/img/events/2.png",
+        "alternativeText":"MMMM 2016",
+        "heading":"MMMM 2016"
+    },
+    {
+        "id":3,
+        "image":"../../../assets/img/events/3.png",
+        "alternativeText":"Palmex 2017",
+        "heading":"Palmex 2017"
+    },
+    {
+        "id":4,
+        "image":"../../../assets/img/events/4.png",
+        "alternativeText":"Cold Rolling and Processing Technology Bangladesh",
+        "heading":"Cold Rolling and Processing Technology Bangladesh"
+    },
+    {
+        "id":5,
+        "image":"../../../assets/img/events/5.png",
+        "alternativeText":"Cold Rolling and Processing Technology Nairobi",
+        "heading":"Cold Rolling and Processing Technology Nairobi"
+    },
+    {
+        "id":6,
+        "image":"../../../assets/img/events/6.png",
+        "alternativeText":"IMME 2017 2",
+        "heading":"IMME 2017 2"
+    }
+]
+

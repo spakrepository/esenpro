@@ -1,0 +1,64 @@
+<app-header></app-header>
+<app-banner *ngIf="getWindowWidth() > 768" [img]="'../../../assets/img/banner/about.jpg'" [header]="'Core Team'" [subHeader]="'Core Team'"></app-banner>
+<app-banner *ngIf="getWindowWidth() < 768" [img]="'../../../assets/img/banner/mob/about-us.jpg'" [header]="'Core Team'" [subHeader]="'Core Team'"></app-banner>
+
+<div class="about-wrapper">
+
+    <div class="container coremanagementteam-wrapper" *ngIf="managementTeamList && managementTeamList.length > 0 && isManagementVisible">
+        <h3>Management Team</h3>
+        <div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" *ngFor="let team of managementTeamList">
+                <img src="../../../assets/img/team/{{team.imgUrl}}" [alt]="team.altText" class="img-responsive" />
+                <div class="team-name">
+                    <strong>{{team.name}}</strong>
+                    <br />
+                    <span>{{team.designation}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container coremanagementteam-wrapper" *ngIf="coreTeamList && coreTeamList.length > 0">
+      <h3>Core Team</h3>
+      <div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" *ngFor="let team of coreTeamList">
+              <img src="../../../assets/img/core-team/{{team.imgUrl}}" [alt]="team.altText" class="img-responsive cursor" />
+              <div class="team-name">
+                  <strong>{{team.name}}</strong>
+                  <!-- <br /> -->
+                  <span>{{team.designation}}</span>
+                  <!-- <br /> -->
+                  <span>{{team.email}}</span>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+<div class="detail-info-wrapper" *ngIf="teamDetail">
+    <table>
+        <tr>
+            <td>
+                <img src="../../../assets/img/close.png" alt="close" class="close" (click)="closeDetail()" />
+                <h3> {{teamDetail.name}} -
+                    <i class="position" *ngIf="teamDetail.designation">{{teamDetail.designation}}</i>
+                    <br />
+                    <a href="mailto:{{teamDetail.email}}" class="email-text" *ngIf="teamDetail.email">{{teamDetail.email}}</a>
+                </h3>
+                <ul class="detail-ul">
+                    <li *ngFor="let teamDetail of teamDetail.detail">
+                        {{teamDetail}}
+                    </li>
+                </ul>
+
+            </td>
+            <td>
+                <img src="../../../assets/img/core-team/{{teamDetail.imgUrl}}" [alt]="teamDetail.altText" class="img-responsive" />
+            </td>
+        </tr>
+    </table>
+</div>
+
+<app-footer></app-footer>

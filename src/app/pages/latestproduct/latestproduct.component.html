@@ -1,0 +1,1334 @@
+<app-header (productNavigationEvent)="getProductNavigation($event)" (mainProductNavigationEvent)="mainProductClicked($event)" (subCategoryNavigationEvent)="headerSubSubCategoryClicked($event)" (mainCategoryClickedNavigationData)="mainCategoryData($event)"></app-header>
+<app-banner *ngIf="getWindowWidth() > 768" [img]="'product.jpg'" [header]="'Our Products'" [subHeader]="'Our Products'"></app-banner>
+<app-banner *ngIf="getWindowWidth() < 768" [img]="'../../../assets/img/banner/mob/our-products.jpg'" [header]="'Our Products'" [subHeader]="'Our Products'"></app-banner>
+
+
+<div class="container product-wrapper">
+    <div class="row toggle-left-navigation">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <img *ngIf="ismobLeftNavigation" src="../../../assets/img/plus.png" alt="left navigation" (click)="toggleMobLeftMenu()" />
+          <img *ngIf="!ismobLeftNavigation" src="../../../assets/img/minus.png" alt="left navigation" (click)="toggleMobLeftMenu()" />
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 stickElement" id="leftnavigation">
+            <ul class="left-links" *ngIf="!ismobLeftNavigation">
+                <li *ngFor="let item of productLeftNav">
+                    <table>
+                        <tr>
+                            <td (click)="mainCategoryClicked(item); toggleMainCategory(item); highMainLink = item.id" [title]="item.id">
+                                {{item.category}}
+                            </td>
+                            <td (click)="mainCategoryClicked(item); toggleMainCategory(item);" [title]="item.id">
+                                <div *ngIf="currentMainId !== item.id">
+                                    <!-- <svg *ngIf="item.subcategory.length !== 0" xmlns="http://www.w3.org/2000/svg" height="448pt" viewBox="0 0 448 448" width="448pt"><path d="m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0"/></svg> -->
+                                  <app-svg *ngIf="item.subcategory.length !== 0" [plusIcon]="true"></app-svg>
+                                  </div>
+                                <div *ngIf="currentMainId === item.id">
+                                    <!-- <svg *ngIf="item.subcategory.length !== 0" xmlns="http://www.w3.org/2000/svg" height="426pt" viewBox="0 -192 426.66667 426" width="426pt"><path d="m405.332031 43h-384c-11.773437 0-21.332031-9.558594-21.332031-21.332031 0-11.777344 9.558594-21.335938 21.332031-21.335938h384c11.777344 0 21.335938 9.558594 21.335938 21.335938 0 11.773437-9.558594 21.332031-21.335938 21.332031zm0 0"/></svg> -->
+                                    <app-svg *ngIf="item.subcategory.length !== 0" [minusIcon]="true"></app-svg>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <ul class="left-sub-links"  [style.display]="currentMainId != item.id ? 'none': item.subcategory.length > 0 ? 'block' : ' ' ">
+                        <li *ngFor="let subitem of item.subcategory" [title]="subitem.id">
+                            <table>
+                                <tr>
+                                    <td [ngClass]="{active:currentSubId == subitem.id}" (click)="subCategoryClicked(subitem); toggleSubCategory(subitem);">
+                                        {{subitem.category}}
+                                    </td>
+                                    <td (click)="toggleSubCategory(subitem);">
+                                        <div *ngIf="currentSubId !== subitem.id">
+                                            <svg *ngIf="subitem.subcategory.length !== 0 " xmlns="http://www.w3.org/2000/svg" height="448pt" viewBox="0 0 448 448" width="448pt"><path d="m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0"/></svg>
+                                        </div>
+                                        <div *ngIf="currentSubId === subitem.id">
+                                            <svg *ngIf="subitem.subcategory.length !== 0" xmlns="http://www.w3.org/2000/svg" height="426pt" viewBox="0 -192 426.66667 426" width="426pt"><path d="m405.332031 43h-384c-11.773437 0-21.332031-9.558594-21.332031-21.332031 0-11.777344 9.558594-21.335938 21.332031-21.335938h384c11.777344 0 21.335938 9.558594 21.335938 21.335938 0 11.773437-9.558594 21.332031-21.335938 21.332031zm0 0"/></svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- <ul *ngIf="subitem.subcategory.length > 0" class="left-sub-sub-links" [style.display]="currentSubId == subitem.id ? 'block': 'none'">
+                                <li *ngFor="let subsubitem of subitem.subcategory" (click)="subSubCategoryClicked(subsubitem)">{{subsubitem.category}}</li>
+                            </ul> -->
+                            <ul class="left-sub-sub-links" *ngIf="subitem.subcategory.length > 0" [style.display]="currentSubId == subitem.id ? 'block': 'none'">
+                                <li *ngFor="let subsubitem of subitem.subcategory" [title]="subsubitem.id" (click)="subSubCategoryClicked(subsubitem); currentSubSubId = subsubitem.id" [ngClass]="{active: currentSubSubId == subsubitem.id}">{{subsubitem.category}}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
+        <!--Main Category-->
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 main-category-wrapper" *ngIf="product">
+
+            <div *ngIf="toggleProductCategory === 'mainCategory'">
+
+              <div [ngSwitch]="product.category">
+                <div *ngSwitchCase="'Drop-in Replacement Gearbox'">
+                  <h3 *ngIf="product.category">{{product.category}}</h3>
+                  <hr />
+                  <h4>What is Drop-In Replacement Gear Box</h4>
+                  <p>
+                    Esenpro brings to its customer's an innovative solution for customised gearbox requirements. We design a one to one replacement of the customer’s existing gearbox. We insure to maintain the performance and quality standards of the same. Enhancement of power ratings of the gearbox within the same footprints of the existing gearbox is provided too. Drop-in replacements are produced for all types of industrial helical, bevel, bevel helical and planetary gearbox for steel, cement, plastic, rubber, mining, power, cranes, chemical and sugar industry of ANY BRAND!!
+                  </p>
+
+                  <h4>What Information Do We Need?</h4>
+                  <p>
+                    To successfully execute a drop-in replacement project, we require the customers existing gearbox General Asssembly (GA) drawing with the following technical parameters.
+                  </p>
+
+                  <h4>Esenpro Solutions</h4>
+                  <p>
+                    Esenpro shall thereafter create an engineering plan for the drop-in replacement and shall submit a General Assembly drawing for the customer's approval. The customer will have access to all the technical information for the new gearbox in our General Assembly drawing to peruse and approve. Once approval from the customer's end is received, we shall initiate manufacturing of the gearbox.
+                  </p>
+
+                  <div class="before-after-div">
+                    <table class="before-after-table">
+                      <tr>
+                        <td>
+                          <img src="../../../assets/img/before-after/Esenpro_Before_1.png" alt="" class="img-responsive" >
+                          <strong>Before</strong>
+                        </td>
+                        <td>
+                          <img src="../../../assets/img/before-after/Esenpro_After_1.2.png" alt="" class="img-responsive" />
+                          <strong>After</strong>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img src="../../../assets/img/before-after/Esenpro_Before_2.png" alt="" class="img-responsive" >
+                          <strong>Before</strong>
+                        </td>
+                        <td>
+                          <img src="../../../assets/img/before-after/Esenpro_After_2.2.png" alt="" class="img-responsive" />
+                          <strong>After</strong>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img src="../../../assets/img/before-after/Esenpro_Before_3.png" alt="" class="img-responsive" >
+                          <strong>Before</strong>
+                        </td>
+                        <td>
+                          <img src="../../../assets/img/before-after/Esenpro_After_3.2.png" alt="" class="img-responsive" />
+                          <strong>After</strong>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img src="../../../assets/img/before-after/Esenpro_Before_4.png" alt="" class="img-responsive" >
+                          <strong>Before</strong>
+                        </td>
+                        <td>
+                          <img src="../../../assets/img/before-after/Esenpro_After_4.2.png" alt="" class="img-responsive" />
+                          <strong>After</strong>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
+
+                </div>
+
+                <div *ngSwitchCase="'Open Gears'">
+                  <h3 *ngIf="product.category">{{product.category}}</h3>
+                  <hr />
+
+                  <div class="open-gear-wrapper">
+                    <ul>
+                      <li>Spur, Helical & Herringbone profiles manufactured with a DIN class 4/5 or better</li>
+                      <li>Gear Manufacturing facility up to 1500mm OD with a maximum module of 45</li>
+                      <li>Face width range from 25mm to 1000mm</li>
+                      <li>Gears & Pinions are grounded on profile gear grinding machines</li>
+                      <li>On board gear testing machine can check the lead, profile and pitch error</li>
+                    </ul>
+
+                    <div class="open-gear-grid">
+                        <div *ngFor="let opGear of openGearImg">
+                          <img
+                            src="../../../assets/img/products/open-gear/{{opGear.imgUrl}}"
+                            [alt]="opGear.imgText"
+                            [title]="opGear.imgText"
+                            class="img-responsive"
+                            />
+                        </div>
+                    </div>
+
+                  </div>
+
+
+                </div>
+
+                <div *ngSwitchDefault>
+
+                  <h3>
+                    <span>{{product.name}}</span>
+                    <div [ngSwitch]="product.category">
+                    <div *ngSwitchCase="'New Product Development'">
+                      <span class="product-enquiry" data-toggle="modal" data-target="#myModal" (click)="getCurrentObj(product); formHeading = 'Contact Us'">Contact Us</span>
+                    </div>
+                    <div *ngSwitchDefault>
+                      <span *ngIf="isProductEnqury" class="product-enquiry" data-toggle="modal" data-target="#myModal"
+                        (click)="getCurrentObj(product); formHeading = 'Product Enquiry'">Product Enquiry</span>
+                    </div>
+                  </div>
+
+                    <!-- <span *ngIf="!isProductEnqury" class="product-enquiry" data-toggle="modal" data-target="#myModal" (click)="getCurrentObj(product)">Product Enquiry</span> -->
+                  </h3>
+                  <img [src]="product.image" [alt]="product.alternativeText" class="img-responsive" />
+                  <div [innerHTML]="product.productDetail"></div>
+
+                  <div class="feature-wrapper" *ngIf="product.specialFeature.length > 0">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Design Features
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <ul>
+                              <li *ngFor="let item of product.specialFeature">{{item}}</li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.housing">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Housing
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.housing}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.wighted">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Weighted
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.wighted}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.oilQuantity">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Oil Quantity
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.oilQuantity}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.nominalOutputTorquePerShaft">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Nominal Output Torque Per Shaft
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.nominalOutputTorquePerShaft}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.nominalOutputTorque">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Nominal Output Torque
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.nominalOutputTorque}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.outputSpeed">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Output Speed
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.outputSpeed}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.type">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Type
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.type}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.stage">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Number of Stages
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.stage}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.sizeRange">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Size Range
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.sizeRange}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.shaft">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Shaft
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.shaft}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.screwSizeRange">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Screw Size Range
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.screwSizeRange}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.reductionRatioRange">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Reduction Ratio Range
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.reductionRatioRange}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.rationRange">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Ration Range
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.rationRange}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.powerRange">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Power Range
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.powerRange}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.outputShaft">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Output Shaft
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.outputShaft}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.mounting">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Mounting
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.mounting}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.lubrication">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Lubrication
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.lubrication}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.inputOutputShaft">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Input Output Shaft
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.inputOutputShaft}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.drive">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Drive
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.drive}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.applications">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Application
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.applications}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.additionalAccessories">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Additional Accessories
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.additionalAccessories}}</p>
+                      </div>
+                  </div>
+
+                  <div class="feature-wrapper" *ngIf="product.accessories">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Accessories
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{product.accessories}}</p>
+                      </div>
+                  </div>
+
+                  <span *ngIf="isProductEnqury" class="product-enquiry" data-toggle="modal" data-target="#myModal"
+                  (click)="getCurrentObj(product)">Product Enquiry</span>
+
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+         <!--Main Category-->
+
+        <!--Sub Category-->
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 sub-category-wrapper" *ngIf="subCategoryProduct">
+            <div *ngIf="toggleProductCategory === 'subCategory'">
+
+                <table class="heading-table" [ngClass]="{borderBottom: isBorderBottom}">
+                    <tr>
+                        <td>
+                            <h3>{{subCategoryProduct.name}}
+                              <span *ngIf="!isProductListVisiblie">
+                                <span *ngIf="!isProductEnqury" class="product-enquiry" data-toggle="modal" data-target="#myModal"
+                                  (click)="getCurrentObj(subCategoryProduct)">Product Enquiry</span>
+                              </span>
+                            </h3>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="row" *ngIf="isProductListVisiblie">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" *ngFor="let item of subCategoryProduct.imgList" (click)="changeImg(item)">
+                        <div class="product-list-design">
+                            <img [src]="item.image" [alt]="item.alternativeText" class="img-responsive" [title]="item.id" />
+                            <p class="text-center"><strong>{{item.alternativeText | producttextlength:30}}</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="!isProductListVisiblie">
+
+                    <ul class="breadcrumb product-name" *ngIf="isBreadcrumbVisible">
+                        <li *ngIf="backTo.name"><a class="grey" (click)="goBack()">{{backTo.name}}</a></li>
+                        <li>{{productName}}</li>
+                    </ul>
+
+                    <img [src]="subCategoryProduct.image" [alt]="subCategoryProduct.alternativeText" class="img-responsive" />
+
+                    <div [innerHTML]="subCategoryProduct.productDetail"></div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.specialFeature.length > 0">
+                      <div class="feature-list">
+                          <strong appCollaps>
+                            Design Features
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <ul>
+                            <li *ngFor="let item of subCategoryProduct.specialFeature">{{item}}</li>
+                          </ul>
+                      </div>
+                  </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.housing">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Housing
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.housing}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.wighted">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Weighted
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.wighted}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.oilQuantity">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Oil Quantity
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.oilQuantity}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.nominalOutputTorquePerShaft">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Nominal Output Torque Per Shaft
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.nominalOutputTorquePerShaft}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.nominalOutputTorque">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Nominal Output Torque
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.nominalOutputTorque}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.outputSpeed">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Output Speed
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.outputSpeed}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.type">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Type
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.type}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.stage">
+                      <div class="feature-list">
+                        <strong appCollaps>Number of Stages</strong>
+                        <p>{{subCategoryProduct.stage}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.sizeRange">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Size Range
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.sizeRange}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.shaft">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Shaft
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.shaft}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.screwSizeRange">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Screw Size Range
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.screwSizeRange}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.reductionRatioRange">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Reduction Ratio Range
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.reductionRatioRange}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.rationRange">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Ration Range
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.rationRange}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.powerRange">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Power Range
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.powerRange}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.outputShaft">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Output Shaft
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.outputShaft}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.mounting">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Mounting
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.mounting}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.lubrication">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Lubrication
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.lubrication}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.inputOutputShaft">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Input Output Shaft
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.inputOutputShaft}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.drive">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Drive
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.drive}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.applications">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Application
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.applications}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.additionalAccessories">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Additional Accessories
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.additionalAccessories}}</p>
+                      </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="subCategoryProduct.accessories">
+                      <div class="feature-list">
+                        <strong appCollaps>
+                          Accessories
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subCategoryProduct.accessories}}</p>
+                      </div>
+                    </div>
+
+                    <div *ngIf="isProductListVisiblie">
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.specialFeature.length > 0">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Design Features
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <ul>
+                            <li *ngFor="let item of subCategoryProduct.specialFeature">{{item}}</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.housing">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Housing
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.housing}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.wighted">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Weighted
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.wighted}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.oilQuantity">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Oil Quantity
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.oilQuantity}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.nominalOutputTorquePerShaft">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Nominal Output Torque Per Shaft
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.nominalOutputTorquePerShaft}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.nominalOutputTorque">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Nominal Output Torque
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.nominalOutputTorque}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.outputSpeed">
+                        <div class="feature-list">
+                          <strong appCollaps>Output Speed</strong>
+                          <p>{{subCategoryProduct.outputSpeed}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.type">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Type
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.type}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.stage">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Number of Stages
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.stage}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.sizeRange">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Size Range
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.sizeRange}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.shaft">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Shaft
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.shaft}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.screwSizeRange">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Screw Size Range
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.screwSizeRange}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.reductionRatioRange">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Reduction Ratio Range
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.reductionRatioRange}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.rationRange">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Ration Range
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.rationRange}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.powerRange">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Power Range
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.powerRange}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.outputShaft">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Output Shaft
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.outputShaft}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.mounting">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Mounting
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.mounting}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.lubrication">
+                        <div class="feature-list">
+                          <strong>
+                            Lubrication
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.lubrication}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.inputOutputShaft">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Input Output Shaft
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.inputOutputShaft}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.drive">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Drive
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.drive}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.applications">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Application
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.applications}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.additionalAccessories">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Additional Accessories
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.additionalAccessories}}</p>
+                        </div>
+                      </div>
+
+                      <div class="feature-wrapper" *ngIf="subCategoryProduct.accessories">
+                        <div class="feature-list">
+                          <strong appCollaps>
+                            Accessories
+                            <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                          </strong>
+                          <p>{{subCategoryProduct.accessories}}</p>
+                        </div>
+                      </div>
+
+                    </div>
+                </div>
+
+                <span *ngIf="isProductEnqury" class="product-enquiry" data-toggle="modal" data-target="#myModal"
+                                  (click)="getCurrentObj(subCategoryProduct)">Product Enquiry</span>
+
+            </div>
+        </div>
+         <!--Sub Category-->
+
+        <!--Sub Sub Category-->
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 sub-sub-category-wrapper" *ngIf="subSubCategoryProduct">
+            <div *ngIf="toggleProductCategory === 'subSubCategory'">
+                <h3>
+                  <span>{{subSubCategoryProduct.name}} </span>
+                  <span *ngIf="!isProductEnqury" class="product-enquiry" data-toggle="modal" data-target="#myModal" (click)="getCurrentObj(subSubCategoryProduct)">Product Enquiry</span>
+                </h3>
+
+                  <img [src]="subSubCategoryProduct.image" [alt]="subSubCategoryProduct.alternativeText" class="img-responsive" />
+                <div [innerHTML]="subSubCategoryProduct.productDetail"></div>
+
+                <!-- <h4>Features:</h4> -->
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.specialFeature.length > 0">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Design Features
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <ul>
+                            <li *ngFor="let item of subSubCategoryProduct.specialFeature">{{item}}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.housing">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Housing
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.housing}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.wighted">
+                    <div class="feature-list">
+                        <strong appCollaps>Weighted</strong>
+                        <p>{{subSubCategoryProduct.wighted}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.oilQuantity">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Oil Quantity
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.oilQuantity}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.nominalOutputTorquePerShaft">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Nominal Output Torque Per Shaft
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.nominalOutputTorquePerShaft}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.nominalOutputTorque">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Nominal Output Torque
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.nominalOutputTorque}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.outputSpeed">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Output Speed
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.outputSpeed}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.type">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Type
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.type}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.stage">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Number of Stages
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.stage}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.sizeRange">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Size Range
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.sizeRange}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.shaft">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Shaft
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.shaft}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.screwSizeRange">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Screw Size Range
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.screwSizeRange}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.reductionRatioRange">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Reduction Ratio Range
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.reductionRatioRange}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.rationRange">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Ration Range
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.rationRange}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.powerRange">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Power Range
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.powerRange}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.outputShaft">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Output Shaft
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.outputShaft}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.mounting">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Mounting
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.mounting}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.lubrication">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Lubrication
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.lubrication}}</p>
+                    </div>
+                </div>
+
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.inputOutputShaft">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Input Output Shaft
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.inputOutputShaft}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.drive">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Drive
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.drive}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.applications">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Application
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.applications}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.additionalAccessories">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Additional Accessories
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.additionalAccessories}}</p>
+                    </div>
+                </div>
+
+                <div class="feature-wrapper" *ngIf="subSubCategoryProduct.accessories">
+                    <div class="feature-list">
+                        <strong appCollaps>
+                          Accessories
+                          <app-svg class="plus"  [plusIcon]="true"></app-svg>
+                            <app-svg class="minus"  [minusIcon]="true"></app-svg>
+                        </strong>
+                        <p>{{subSubCategoryProduct.accessories}}</p>
+                    </div>
+                </div>
+
+                <span *ngIf="isProductEnqury" class="product-enquiry" data-toggle="modal" data-target="#myModal" (click)="getCurrentObj(subSubCategoryProduct)">Product Enquiry</span>
+
+            </div>
+        </div>
+        <!--Sub Sub Category-->
+
+    </div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" (click)="onCancel()">&times;</button>
+          <h4 class="modal-title" *ngIf="formHeading">{{formHeading}}</h4>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="productForm" (submit)="onSubmit()">
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" formControlName="name" />
+            </div>
+
+            <div class="form-group">
+              <label for="name">Company Name</label>
+              <input type="text" class="form-control" id="name" formControlName="cname" />
+          </div>
+
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email" />
+            </div>
+
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number</label>
+                <input type="email" class="form-control" id="mobileNumber" formControlName="mobileNumber" />
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" formControlName="city" />
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" id="country" formControlName="country" />
+            </div>
+
+            <div class="form-group">
+                <label for="query">Query</label>
+                <input type="text" class="form-control" id="query" formControlName="query" />
+            </div>
+
+            <input type="hidden" class="form-control" id="productName" formControlName="productName" />
+
+            <img *ngIf="selectedProImg" [src]="selectedProImg" alt="selecte img" class="img-responsive img-thumbnail select-img" />
+
+            <div class="text-right">
+                <button type="submit" class="btn btn-default esenpro-btn">Submit</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<app-footer></app-footer>

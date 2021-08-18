@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<app-banner *ngIf="getWindowWidth() > 768" [img]="'../../../assets/img/banner/about.jpg'" [header]="'Quality & Assurance'" [subHeader]="'Quality& Assurance'"></app-banner>
+<app-banner *ngIf="getWindowWidth() < 768" [img]="'../../../assets/img/banner/mob/about-us.jpg'" [header]="'Quality & Assurance'" [subHeader]="'Quality& Assurance'"></app-banner>
+
+<!-- <div class="about-wrapper">
+    <div class="container">
+        <h3>Quality Policy</h3>
+        <div>
+            <p>We at Essential Power Transmission Pvt. Ltd. are committed to continually improve the standards of the company by:</p>
+            <div class="grid">
+                <div *ngFor="let policy of policyQulaity">
+                    <span *ngIf="policy">{{policy}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="about-wrapper">
+    <div class="container">
+        <h3>Quality Policy</h3>
+        <div>
+            <p>We, At Esenpro Commit Ourselves For Supplying Products That Would Give Complete Satisfaction To Customers.</p>
+            <strong>We Will Strive To Achieve Growth In The Market By:</strong>
+            <ul class="quality-assurance">
+                <li>Supplying Consistent Quality Products To Our Valued Customers</li>
+                <li>
+                    Complying With All Applicable Requirements And Continually Improve The Effectivenes Of Quality Management System
+                </li>
+                <li>
+                    Creating An Environment Of Teamwork And Innovative Approach
+                </li>
+                <li>
+                    Attending To Customer's Problems, Clarifications, Requirements With Quick And Competent Response.
+                </li>
+                <li>
+                    Continuously Motivating Our Workforce Which Will Lead Us Towoards Improving Our Company's Performance
+                </li>
+                <li>
+                    Providing Essential Training For Our Team Members And Equipping Them With The Skills They Need To Satisfy
+                    Customer Requirement
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,82 @@
+
+<div class="container header-border">
+  <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 mob">
+         <img src="../../../assets/img/logo.png" alt="Esenpro Logo" class="img-responsive logo" (click)="gotoNavigation('home')"  />
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" *ngIf="currentWidth > 768 ">
+          <ul class="navigation-list">
+              <li *ngFor="let item of latestNavigation">
+
+                  <span *ngIf="item.subheader.length > 0">
+                      <span>{{item.text}}</span>
+                  </span>
+
+                  <span *ngIf="!(item.subheader.length > 0)">
+                      <span (click)="goto(item.url, item)">{{item.text}}</span>
+                  </span>
+
+                  <ul class="dropdown-links" *ngIf="item.subheader.length > 0 && item.text == 'Products'">
+                      <li *ngFor="let sub of item.subheader">
+                          <a (click)="gotoSubCategory(sub)">
+                              {{sub.category}}
+                          </a>
+                      </li>
+                  </ul>
+
+                  <ul class="dropdown-links" *ngIf="item.subheader.length > 0 && item.text == 'About Us'">
+                      <li *ngFor="let sub of item.subheader">
+                          <a (click)="gotoNavigation(sub)">
+                              {{sub.category}}
+                          </a>
+                      </li>
+                  </ul>
+
+
+               </li>
+          </ul>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 text-right" *ngIf="currentWidth < 768 ">
+        <img src="../../../assets/img/menu.png" alt="menu-icon" class="img-responsive menu-icon" (click)="toggleMobNavigation()" />
+    </div>
+  </div>
+</div>
+
+<!--Mobile Navigation-->
+<div class="container" *ngIf="currentWidth < 768 ">
+  <ul class="mobile-navigation-wrapper" *ngIf="showMobNavigation">
+    <li *ngFor="let item of latestNavigation">
+
+      <span *ngIf="item.subheader.length > 0" title="test">
+        <span>{{item.text}}</span>
+      </span>
+
+      <span *ngIf="!(item.subheader.length > 0)">
+        <span (click)="goto(item.url, item)">{{item.text}}</span>
+      </span>
+
+      <ul class="dropdown-links" *ngIf="(item.subheader.length > 0 && item.text == 'Products') && showCurrentMobDropdownNavigation == item.id">
+        <li *ngFor="let sub of item.subheader">
+            <a (click)="gotoSubCategory(sub)">
+                {{sub.category}}
+            </a>
+        </li>
+    </ul>
+
+    <ul class="dropdown-links" *ngIf="(item.subheader.length > 0 && item.text == 'About Us') && showCurrentMobDropdownNavigation == item.id">
+        <li *ngFor="let sub of item.subheader">
+            <a (click)="gotoNavigation(sub)">
+                {{sub.category}}
+            </a>
+        </li>
+    </ul>
+
+      <span *ngIf="item.subheader.length > 0" class="dropdown-plus-wrapper">
+        <svg *ngIf="showCurrentMobDropdownNavigation != item.id" (click)="showCurrentMobDropdown(item)" xmlns="http://www.w3.org/2000/svg" height="448pt" viewBox="0 0 448 448" width="448pt"><path _ngcontent-vdc-c53="" d="m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0"></path></svg>
+        <svg *ngIf="showCurrentMobDropdownNavigation == item.id" (click)="hideCurrentMobDropdown()" xmlns="http://www.w3.org/2000/svg" height="426pt" viewBox="0 -192 426.66667 426" width="426pt"><path _ngcontent-grm-c50="" d="m405.332031 43h-384c-11.773437 0-21.332031-9.558594-21.332031-21.332031 0-11.777344 9.558594-21.335938 21.332031-21.335938h384c11.777344 0 21.335938 9.558594 21.335938 21.335938 0 11.773437-9.558594 21.332031-21.335938 21.332031zm0 0"></path></svg>
+      </span>
+
+    </li>
+  </ul>
+</div>
+<!--Mobile Navigation-->

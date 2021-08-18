@@ -1,0 +1,298 @@
+<app-header></app-header>
+<app-banner *ngIf="getWindowWidth() > 768" [img]="'networks.jpg'" [header]="'Network'" [subHeader]="'Network'">
+</app-banner>
+<app-banner *ngIf="getWindowWidth() < 768" [img]="'../../../assets/img/banner/mob/network.jpg'" [header]="'Network'"
+  [subHeader]="'Network'"></app-banner>
+
+<div *ngIf="getWindowWidth() > 768" class="news-wrapper">
+  <div class="map">
+    <ul class="tab">
+      <li class="active" (click)="gotoNetwork('domestic')" [ngClass]="{'active': currentNetwork == 'domestic'}">Domestic
+        Networks</li>
+      <li (click)="gotoNetwork('international')" [ngClass]="{'active': currentNetwork == 'international'}">International
+        Networks</li>
+    </ul>
+
+    <div *ngIf="network == 'domestic'" class="network-img-wrapper">
+      <img src="../../../assets/img/network/domestic.png" alt="Domestic Networks" class="img-responsive" />
+
+      <app-networkpop
+          [ngClass]="{'active': showNetworkTooltip === 'tamilnadu'}"
+          class="tamilnadupop"
+          [name]="'Mr. P.Rajagopal'"
+          [email]="'E: rajgopal@esenpro.com'"
+          [locationText]="'Tamil Nadu'"
+          ></app-networkpop>
+
+          <app-networkpop
+          [ngClass]="{'active': showNetworkTooltip === 'gujrat'}"
+          class="gujratpop"
+          [name]="'Technocraft Engineering'"
+          [email]="'E: technocraftenggservices@gmail.com'"
+          [locationText]="'Gujrat'"
+          ></app-networkpop>
+
+          <app-networkpop
+          [ngClass]="{'active': showNetworkTooltip === 'bhilai'}"
+          class="bhilaipop"
+          [name]="'M.V. Engineers'"
+          [email]="'E: mvengineers99@gmail.com'"
+          [locationText]="'Bhilai'"
+          ></app-networkpop>
+
+          <app-networkpop
+          [ngClass]="{'active': showNetworkTooltip === 'neyveli'}"
+          class="neyvelipop"
+          [name]="'M.V. Engineers'"
+          [email]="'E: mvengineers99@gmail.com'"
+          [locationText]="'Neyveli Lignite Corporation'"
+          ></app-networkpop>
+
+          <app-networkpop
+          [ngClass]="{'active': showNetworkTooltip === 'andra'}"
+          class="andrapop"
+          [name]="'Mr.Ajit Kumar Uthappa'"
+          [email]="'E: ajit@esenpro.com'"
+          [locationText]="'Andra Pradesh'"
+          ></app-networkpop>
+
+          <app-networkpop
+          [ngClass]="{'active': showNetworkTooltip === 'jharkhand'}"
+          class="jharkhandpop"
+          [name]="'Jamshedpur Equipments'"
+          [email]="'E: jamshedpurequipemtns@gmail.com'"
+          [locationText]="'Jharkhand'"
+          ></app-networkpop>
+
+          <div class="tamilnadu-btn" (mouseenter)="showNetworkTooltip = 'tamilnadu'" (mouseout)="showNetworkTooltip = ''"></div>
+          <div class="gujrat-btn" (mouseenter)="showNetworkTooltip = 'gujrat'" (mouseout)="showNetworkTooltip = ''"></div>
+          <div class="bhilai-btn" (mouseenter)="showNetworkTooltip = 'bhilai'" (mouseout)="showNetworkTooltip = ''"></div>
+          <div class="neyveli-btn" (mouseenter)="showNetworkTooltip = 'neyveli'" (mouseout)="showNetworkTooltip = ''"></div>
+          <div class="andra-btn" (mouseenter)="showNetworkTooltip = 'andra'" (mouseout)="showNetworkTooltip = ''"></div>
+          <div class="jharkhand-btn" (mouseenter)="showNetworkTooltip = 'jharkhand'" (mouseout)="showNetworkTooltip = ''"></div>
+
+    </div>
+
+    <div *ngIf="network == 'international'" class="network-img-wrapper">
+      <img src="../../../assets/img/network/international.png" alt="International Networks" class="img-responsive map" />
+
+      <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'russia'}"
+        class="russiapop"
+        [name]="'Industrial Drive LLP'"
+        [email]="'E: dimitry.pury@promprivod.su'"
+        [locationText]="'Russia'"
+        ></app-networkpop>
+
+      <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'kaza'}"
+        class="kazakhstan"
+        [name]="'Industrial Drive LLP'"
+        [email]="'E: info@prompeivod.kz'"
+        [locationText]="'Kazakhstan'"
+        ></app-networkpop>
+
+        <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'uzbek'}"
+        class="uzbekistan"
+        [name]="'Industrial Drive LLP'"
+        [email]="'E: timur.kalandarvou@prompeivod.uz'"
+        [locationText]="'Uzbekistan'"
+        ></app-networkpop>
+
+        <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'iran'}"
+        class="iranpop"
+        [name]="'Haraman Sanat Masjid'"
+        [email]="'E: info@haramansanat.com'"
+        [locationText]="'Iran'"
+        ></app-networkpop>
+
+        <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'uae'}"
+        class="uaepop"
+        [name]="'Hyrdofir FZE'"
+        [email]="'E: adwant@hydrofitgroup.com'"
+        [locationText]="'UAE'"
+        ></app-networkpop>
+
+        <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'turkey'}"
+        class="turkeypop"
+        [name]="'Ires Mekanik'"
+        [email]="'E: tolga@iresmekanik.com'"
+        [locationText]="'Turkey'"
+        ></app-networkpop>
+
+        <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'hungary'}"
+        class="hungarypop"
+        [name]="'IDECO Heavy Equipment Kft'"
+        [email]="'E: elisa.boldor@ideco.group'"
+        [locationText]="'Hungary'"
+        ></app-networkpop>
+
+        <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'belgium'}"
+        class="belgiumpop"
+        [name]="'PowerTrain Network'"
+        [email]="'E: gianning@powertrainnetwork1.com'"
+        [locationText]="'Belgium'"
+        ></app-networkpop>
+
+        <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'brazil'}"
+        class="brazilpop"
+        [name]="'Redumc'"
+        [email]="'E: servicos@redumec.com.br'"
+        [locationText]="'Brazil'"
+        ></app-networkpop>
+
+        <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'northamerica'}"
+        class="northamericapop"
+        [name]="'GearboxRx'"
+        [email]="'E: jdz@gearboxgurus.com'"
+        [locationText]="'North America'"
+        ></app-networkpop>
+
+        <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'italy'}"
+        class="italypop"
+        [name]="'Sibre Italia'"
+        [email]="'E: sales@sibre.it'"
+        [locationText]="'Italy'"
+        ></app-networkpop>
+
+        <app-networkpop
+        [ngClass]="{'active': showNetworkTooltip === 'sweden'}"
+        class="swedenpop"
+        [name]="'Drivsytem 05'"
+        [email]="'E: andres.sand@drivsystem'"
+        [locationText]="'Sweden'"
+        ></app-networkpop>
+
+      <div class="russia-btn" (mouseenter)="showNetworkTooltip = 'russia'" (mouseout)="showNetworkTooltip = ''"></div>
+      <div class="kaza-btn" (mouseenter)="showNetworkTooltip = 'kaza'" (mouseout)="showNetworkTooltip = ''"></div>
+      <div class="uzbek-btn" (mouseenter)="showNetworkTooltip = 'uzbek'" (mouseout)="showNetworkTooltip = ''"></div>
+      <div class="iran-btn" (mouseenter)="showNetworkTooltip = 'iran'" (mouseout)="showNetworkTooltip = ''"></div>
+      <div class="uae-btn" (mouseenter)="showNetworkTooltip = 'uae'" (mouseout)="showNetworkTooltip = ''"></div>
+      <div class="turkey-btn" (mouseenter)="showNetworkTooltip = 'turkey'" (mouseout)="showNetworkTooltip = ''"></div>
+      <div class="hungary-btn" (mouseenter)="showNetworkTooltip = 'hungary'" (mouseout)="showNetworkTooltip = ''"></div>
+      <div class="belgium-btn" (mouseenter)="showNetworkTooltip = 'belgium'" (mouseout)="showNetworkTooltip = ''"></div>
+      <div class="brazil-btn" (mouseenter)="showNetworkTooltip = 'brazil'" (mouseout)="showNetworkTooltip = ''"></div>
+      <div class="north-america-btn" (mouseenter)="showNetworkTooltip = 'northamerica'" (mouseout)="showNetworkTooltip = ''"></div>
+      <div class="italy-btn" (mouseenter)="showNetworkTooltip = 'italy'" (mouseout)="showNetworkTooltip = ''"></div>
+      <div class="sweden-btn" (mouseenter)="showNetworkTooltip = 'sweden'" (mouseout)="showNetworkTooltip = ''"></div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div *ngIf="getWindowWidth() < 768" class="network-mob">
+  <ul class="nav nav-tabs">
+    <li class="active" (click)="gotoNetwork('domestic')" [ngClass]="{'active': currentNetwork == 'domestic'}"><a>Domestic Networks</a></li>
+    <li (click)="gotoNetwork('international')" [ngClass]="{'active': currentNetwork == 'international'}"><a>International Networks</a></li>
+  </ul>
+
+  <div *ngIf="network == 'domestic'" class="mob-network-wrapper">
+    <app-mobnetwork [indexNum]="1" [stateName]="'Tamil Nadu'" [name]="'Mr. P.Rajagopal'" [email]="'E: rajgopal@esenpro.com'"></app-mobnetwork>
+    <app-mobnetwork [indexNum]="2" [stateName]="'Gujrat'" [name]="'Technocraft Engineering'" [email]="'technocraftenggservices@gmail.com'"></app-mobnetwork>
+    <app-mobnetwork [indexNum]="3" [stateName]="'Bhilai'" [name]="'M.V.'" [email]="'mvengineers99@gmail.com'"></app-mobnetwork>
+    <app-mobnetwork [indexNum]="4" [stateName]="'Neyveli Lignite Coporation'" [name]="'SSV Marketing Associates'" [email]="'ivsharmassv@yahoo.co.in'"></app-mobnetwork>
+    <app-mobnetwork [indexNum]="5" [stateName]="'Andra Pradesh'" [name]="'Mr. Ajit Kumar Uthappa'" [email]="'ajit@esenpro.com'"></app-mobnetwork>
+    <app-mobnetwork [indexNum]="6" [stateName]="'Jharkhand'" [name]="'Jamshedpur Equipments'" [email]="'jamshedpurequipemtns@gmail.com'"></app-mobnetwork>
+  </div>
+
+  <div *ngIf="network == 'international'" class="mob-network-wrapper">
+    <app-mobnetwork
+    [indexNum]="1"
+    [name]="'Industrial Drive LLP'"
+    [email]="'E: dimitry.pury@promprivod.su'"
+    [stateName]="'Russia'"
+    ></app-mobnetwork>
+
+  <app-mobnetwork
+  [indexNum]="2"
+    [name]="'Industrial Drive LLP'"
+    [email]="'E: info@prompeivod.kz'"
+    [stateName]="'Kazakhstan'"
+    ></app-mobnetwork>
+
+    <app-mobnetwork
+    [indexNum]="3"
+    [name]="'Industrial Drive LLP'"
+    [email]="'E: timur.kalandarvou@prompeivod.uz'"
+    [stateName]="'Uzbekistan'"
+    ></app-mobnetwork>
+
+    <app-mobnetwork
+    [indexNum]="4"
+    [name]="'Haraman Sanat Masjid'"
+    [email]="'E: info@haramansanat.com'"
+    [stateName]="'Iran'"
+    ></app-mobnetwork>
+
+    <app-mobnetwork
+    [indexNum]="5"
+    [name]="'Hyrdofir FZE'"
+    [email]="'E: adwant@hydrofitgroup.com'"
+    [stateName]="'UAE'"
+    ></app-mobnetwork>
+
+    <app-mobnetwork
+    [indexNum]="6"
+    [name]="'Ires Mekanik'"
+    [email]="'E: tolga@iresmekanik.com'"
+    [stateName]="'Turkey'"
+    ></app-mobnetwork>
+
+    <app-mobnetwork
+    [indexNum]="7"
+    [name]="'IDECO Heavy Equipment Kft'"
+    [email]="'E: elisa.boldor@ideco.group'"
+    [stateName]="'Hungary'"
+    ></app-mobnetwork>
+
+    <app-mobnetwork
+    [indexNum]="8"
+    [name]="'PowerTrain Network'"
+    [email]="'E: gianning@powertrainnetwork1.com'"
+    [stateName]="'Belgium'"
+    ></app-mobnetwork>
+
+    <app-mobnetwork
+    [indexNum]="9"
+    [name]="'Redumc'"
+    [email]="'E: servicos@redumec.com.br'"
+    [stateName]="'Brazil'"
+    ></app-mobnetwork>
+
+    <app-mobnetwork
+    [indexNum]="10"
+    [name]="'GearboxRx'"
+    [email]="'E: jdz@gearboxgurus.com'"
+    [stateName]="'North America'"
+    ></app-mobnetwork>
+
+    <app-mobnetwork
+    [indexNum]="11"
+    [name]="'Sibre Italia'"
+    [email]="'E: sales@sibre.it'"
+    [stateName]="'Italy'"
+    ></app-mobnetwork>
+
+    <app-mobnetwork
+    [indexNum]="12"
+    [name]="'Drivsytem 05'"
+    [email]="'E: andres.sand@drivsystem'"
+    [stateName]="'Sweden'"
+    ></app-mobnetwork>
+  </div>
+
+</div>
+
+
+<app-footer></app-footer>

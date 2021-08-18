@@ -1,0 +1,115 @@
+<app-header></app-header>
+<app-banner *ngIf="getWindowWidth() > 768" [img]="'career.jpg'" [header]="'Career'" [subHeader]="'Career'"></app-banner>
+<app-banner *ngIf="getWindowWidth() < 768" [img]="'../../../assets/img/banner/mob/career.jpg'" [header]="'Career'" [subHeader]="'Career'"></app-banner>
+
+<div class="career-wrapper">
+    <div class="container">
+        <h3>Join Us</h3>
+
+        <div>
+            <p>
+                We believe in a work environment that is lively and balanced. A workplace that is full of hearty laughs
+                balanced by utmost dedication and team work!
+            </p>
+
+            <p>
+                Welcome to Esenpro, we provide end to end gearing solutions for varied applications in the engineering
+                industry. Interested in with working us? You are most welcome in our working space where your
+                professional life will travel through growth, success, work satisfaction and in the end reaching
+                happiness. This is what we all work for, right?
+            </p>
+
+            <p>
+                You are our prime asset, find your passion with us and join our vibrant team!
+            </p>
+        </div>
+
+        <div class="container p-l-r-15" id="formContainer">
+           <div class="row">
+               <div class="col-lg-12">
+                <form [formGroup]="careerForm" class="form-horizontal" (ngSubmit)="onSubmit()">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="panel-title"><b>Connect with us</b></div>
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="col-lg-12">
+                                <div class="form-group"
+                                [ngClass]="{'has-error': careerForm.get('firstName').errors && (careerForm.get('firstName').touched || careerForm.get('firstName').dirty)}">
+                                <label class="control-label" for="firstName">Full Name</label>
+                                <input type="text" class="form-control" id="firstName" formControlName="firstName" />
+                                <span class="help-block"
+                                    *ngIf="careerForm.get('firstName').errors && (careerForm.get('firstName').touched || careerForm.get('firstName').dirty)">
+                                    <span *ngIf="careerForm.get('firstName').errors.required">First Name is required</span>
+                                    <span
+                                        *ngIf="careerForm.get('firstName').errors.minlength || careerForm.get('firstName').errors.maxlength">Full
+                                        Name must be greater than 2 characters and less than 10 characters</span>
+                                </span>
+                            </div>
+
+                            <div class="form-group"
+                                [ngClass]="{'has-error': careerForm.get('lastName').errors && (careerForm.get('lastName').touched || careerForm.get('lastName').dirty)}">
+                                <label class="control-label" for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" formControlName="lastName" />
+                                <span class="help-block"
+                                    *ngIf="careerForm.get('lastName').errors && (careerForm.get('lastName').touched || careerForm.get('lastName').dirty)">
+                                    <span *ngIf="careerForm.get('lastName').errors.required">
+                                        Last Name is required
+                                    </span>
+                                    <span
+                                        *ngIf="careerForm.get('lastName').errors.minlength || careerForm.get('lastName').errors.maxlength">
+                                        Last Name must be greater than 2 characters and less than 10 characters
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="form-group"
+                                [ngClass]="{'has-error': careerForm.get('email').errors && (careerForm.get('email').touched || careerForm.get('email').dirty)}">
+                                <label class="control-label" for="email">Email</label>
+                                <input type="email" class="form-control" id="email" formControlName="email" />
+                                <span class="help-block"
+                                    *ngIf="careerForm.get('email').errors && (careerForm.get('email').touched || careerForm.get('email').dirty)">
+                                    <span *ngIf="careerForm.get('email').errors.required">
+                                        Email is required
+                                    </span>
+                                    <span *ngIf="careerForm.get('email').errors.pattern">
+                                        Email is not valid
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="form-group"
+                                [ngClass]="{'has-error': careerForm.get('position').errors && (careerForm.get('position').touched || careerForm.get('position').dirty)}">
+                                <label class="control-label" for="position">Position for Applying for</label>
+                                <input type="text" class="form-control" id="position" formControlName="position" />
+                                <span class="help-block"
+                                    *ngIf="careerForm.get('position').errors && (careerForm.get('position').touched || careerForm.get('position').dirty)">
+                                    <span *ngIf="careerForm.get('position').errors.required">
+                                        Position is required
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="comment">Additional Information:</label>
+                                <textarea class="form-control" rows="5" id="comment" formControlName="additionalInfo"></textarea>
+                            </div>
+                            </div>
+
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary" [disabled]="!(careerForm.valid)">Submit</button>
+                            <span class="thank" *ngIf="thankYouText">{{thankYouText}}</span>
+                        </div>
+                    </div>
+                </form>
+               </div>
+           </div>
+        </div>
+
+
+    </div>
+</div>
+
+<app-footer></app-footer>

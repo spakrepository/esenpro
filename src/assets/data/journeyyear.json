@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "year": 2013,
+    "journeyDetailId":1
+  },
+  {
+    "id": 2,
+    "year": 2012,
+    "journeyDetailId":2
+  },
+  {
+    "id": 3,
+    "year": 2003,
+    "journeyDetailId":3
+  },
+  {
+    "id": 4,
+    "year": 2001,
+    "journeyDetailId":4
+  },
+  {
+    "id": 5,
+    "year": 2000,
+    "journeyDetailId":5
+  },
+  {
+    "id": 6,
+    "year": 1989,
+    "journeyDetailId":6
+  },
+  {
+    "id": 7,
+    "year": 1987,
+    "journeyDetailId":7
+  },
+  {
+    "id": 8,
+    "year": 1975,
+    "journeyDetailId": 8
+  },
+  {
+    "id": 9,
+    "year": 1970,
+    "journeyDetailId": 9
+  },
+  {
+    "id": 10,
+    "year": 1960,
+    "journeyDetailId": 10
+  },
+  {
+    "id": 11,
+    "year": 1947,
+    "journeyDetailId": 11
+  }
+]

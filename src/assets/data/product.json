@@ -1,0 +1,272 @@
+[
+    {
+        "id": 1,
+        "image": "../../../assets/img/products/EP-Series-Helical-Gearbox.png",
+        "alternativeText": "EP Series Helical Gearbox",
+        "name": "EP Series Helical Gearbox",
+        "powerRange": "0.8 KW to 8000KW",
+        "rationRange":"",
+        "stage": "Single / Double / Triple / Quadruple",
+        "drive": "",
+        "sizeRange": "",
+        "reductionRatioRange": "1.6/1 to 630/1",
+        "shaft": "",
+        "outputShaft": "Solid / Hollow",
+        "inputOutputShaft":"",
+        "mounting": "",
+        "additionalAccessories": "Heat Exchanger / Cooling Coil / Cooling Fan with Cover / Shrink Disc/ Hold Back/ Temprature, Flow & Pressure Sensor/ Lubricating Pump System.",
+        "type": "",
+        "applications": "Bridle Drives/ Bucket Conveyor Drives/ Kiln Drives/ Ball Mill Drives/ Crushers/ Paper Machine Drives/ Mixing Drives/ Agitating Drives/ Hosting Drives/ Turbine Drives.",
+        "accessories": "",
+        "lubrication":  "",
+        "screwSizeRange": "",
+        "productDetail": "<p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> <p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
+        "documentData": [
+            {
+                "id":1,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2015"
+            },
+            {
+                "id":2,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2016"
+            },
+            {
+                "id":3,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2017"
+            },
+            {
+                "id":4,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2018"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "image": "../../../assets/img/products/EP-Series-Bevel-Helical-Gearbox.png",
+        "alternativeText": "EP Series Bevel Helical Gearbox",
+        "name": "EP Series Bevel Helical Gearbox",
+        "powerRange": "0.7 KW to 2850 KW",
+        "rationRange":"",
+        "stage": "Single/ Double / Triple / Quadruple",
+        "drive": "",
+        "sizeRange": "",
+        "reductionRatioRange": "6.3/1 to 630/1",
+        "shaft": "",
+        "outputShaft": "Solid / Hollow",
+        "inputOutputShaft":"",
+        "mounting": "",
+        "additionalAccessories": "Heat Exchanger/ Cooling Coil/ Cooling Fan With Cover/ Shrink Disc/ Hold Back /Temprature, Flow & Pressure Sensors/ Lubricating Pump System.",
+        "type": "",
+        "applications": "Bucket Conveyor Drives/ Kiln Drives/ Ball Mill Drives/ Crushers/ Pulper Machine Drives/ Mixing Drives/ Agitating Drives/ Hosting Drives/ Cooling Tower Drives/ Apron Feeder Drives.",
+        "accessories": "",
+        "lubrication":  "",
+        "screwSizeRange": "",
+        "productDetail": "<p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> <p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
+        "documentData": [
+            {
+                "id":1,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2019"
+            },
+            {
+                "id":2,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2020"
+            },
+            {
+                "id":3,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2021"
+            },
+            {
+                "id":4,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2022"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "image": "../../../assets/img/products/CEP-Series-Helical-Crane-Duty-Gearbox.png",
+        "alternativeText": "CEP Series Helical Crane Duty Gearbox",
+        "name": "CEP Series Helical Crane Duty Gearbox",
+        "powerRange": "",
+        "rationRange":"",
+        "stage": "Double/ Triple/ Quadruple",
+        "drive": "Main Hoist/ Cross Travel/ Long Travel",
+        "sizeRange": "",
+        "reductionRatioRange": "1.6/1 - 300/1",
+        "shaft": "",
+        "outputShaft": "",
+        "inputOutputShaft":"Single & Double Extension as per customer specification",
+        "mounting": "Horizontal/ Verticle",
+        "additionalAccessories": "",
+        "type": "",
+        "applications": "Steel Handling Cranes/ Port Handling Cranes/ Material Handling & Lifting Cranes/ EOT Cranes/ Overhead Cranes.",
+        "accessories": "",
+        "lubrication":  "Forced Lubrication for all Verticle Mounting gearbox",
+        "screwSizeRange": "",
+        "productDetail": "<p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> <p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
+        "documentData": [
+            {
+                "id":1,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2023"
+            },
+            {
+                "id":2,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2024"
+            },
+            {
+                "id":3,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2025"
+            },
+            {
+                "id":4,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2025"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "image": "../../../assets/img/products/Helical-Single-Screw-Extruder-Gearbox.png",
+        "alternativeText": "Helical Single Screw Extruder Gearbox",
+        "name": "Helical Single Screw Extruder Gearbox",
+        "powerRange": "5 KW to 530 KW",
+        "rationRange":"6.3/1 upto 80/1",
+        "stage": "Single Double & Triple",
+        "drive": "",
+        "sizeRange": "",
+        "reductionRatioRange": "",
+        "shaft": "",
+        "outputShaft": "",
+        "inputOutputShaft":"",
+        "mounting": "",
+        "additionalAccessories": "",
+        "type": "",
+        "applications": "",
+        "accessories": "",
+        "lubrication":  "",
+        "screwSizeRange": "40mm to 150mm",
+        "productDetail": "<p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> <p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
+        "documentData": [
+            {
+                "id":1,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2026"
+            },
+            {
+                "id":2,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2027"
+            },
+            {
+                "id":3,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2028"
+            },
+            {
+                "id":4,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2029"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "image": "../../../assets/img/products/Helical-Aerator-Gearbox.png",
+        "alternativeText": "Helical Aerator Gearbox",
+        "name": "Helical Aerator Gearbox",
+        "powerRange": "2.5 KW – 445 KW",
+        "rationRange":"3.35/1 to 35.5/1",
+        "stage": "Single / Double",
+        "drive": "",
+        "sizeRange": "",
+        "reductionRatioRange": "",
+        "shaft": "",
+        "outputShaft": "",
+        "inputOutputShaft":"",
+        "mounting": "Vertical",
+        "additionalAccessories": "",
+        "type": "",
+        "applications": "Waste Water Treatment / Mixing",
+        "accessories": "",
+        "lubrication":  "",
+        "screwSizeRange": "",
+        "productDetail": "<p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> <p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
+        "documentData": [
+            {
+                "id":1,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2030"
+            },
+            {
+                "id":2,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2031"
+            },
+            {
+                "id":3,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2032"
+            },
+            {
+                "id":4,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2033"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "image": "../../../assets/img/products/Worm-Gearbox.png",
+        "alternativeText": "Worm Gearbox",
+        "name": "Worm Gearbox",
+        "powerRange": "Up to 200 HP",
+        "rationRange":"",
+        "stage": "",
+        "drive": "",
+        "sizeRange": "1 1/8, 1 5/8, 2 1/8, 2 1/2, 3, 3 1/2, 3 3/8, 4, 5, 6, 7, 7 7 1/2, 8, 9, 10, 10 1/2, 12, 14, 18",
+        "reductionRatioRange": "10/1 to 70/1 (Single) and 75/1 to 4900/1 (Double)",
+        "shaft": "Solid / Hollow",
+        "outputShaft": "",
+        "inputOutputShaft":"",
+        "mounting": "Foot / Shaft",
+        "additionalAccessories": "",
+        "type": "Hold Back",
+        "applications": "",
+        "accessories": "Horizontal / Inverted / Tube Mill",
+        "lubrication":  "",
+        "screwSizeRange": "",
+        "productDetail": "<p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> <p class=\"book\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>",
+        "documentData": [
+            {
+                "id":1,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2034"
+            },
+            {
+                "id":2,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2035"
+            },
+            {
+                "id":3,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2036"
+            },
+            {
+                "id":4,
+                "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                "text":"Financial Result of 2037"
+            }
+        ]
+    }
+]

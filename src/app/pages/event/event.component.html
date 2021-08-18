@@ -1,0 +1,50 @@
+<app-header></app-header>
+<app-banner *ngIf="getWindowWidth() > 768" [img]="'news-&-events.jpg'" [header]="'News & Events'" [subHeader]="'News & Events'"></app-banner>
+<app-banner *ngIf="getWindowWidth() < 768" [img]="'../../../assets/img/banner/mob/news-&-events.jpg'" [header]="'News & Events'" [subHeader]="'News & Events'"></app-banner>
+
+
+<div class="news-wrapper">
+    <div class="container">
+
+        <ul class="tab">
+            <li class="active" (click)="gotoEvent('pastevent')" [ngClass]="{active:currentEvent == 'pastevent'}">Past Events</li>
+            <li (click)="gotoEvent('upcomingevent')" [ngClass]="{active:currentEvent == 'upcomingevent'}">Upcoming Events</li>
+        </ul>
+
+        <div *ngIf="currentEvent == 'pastevent'">
+
+            <div *ngIf="pastEvents">
+                <div *ngIf="pastEvents.length > 0">
+                    <div class="row">
+                        <div *ngFor="let item of pastEvents" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 relative">
+                            <img [src]="item.image" [alt]="item.alternativeText" class="img-responsive" />
+                            <h4>{{item.heading}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center" *ngIf="pastEvents.length == 0">No Past Event</p>
+            </div>
+
+        </div>
+
+        <div *ngIf="currentEvent == 'upcomingevent'">
+            <div *ngIf="upComingEvents">
+                <div *ngIf="upComingEvents.length > 0">
+                    <div class="row" *ngFor="let item of upComingEvents">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 relative">
+                            <img [src]="item.image" [alt]="item.alternativeText" class="img-responsive" />
+                            <h4>{{item.heading}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center" *ngIf="upComingEvents.length == 0">No Upcoming Event</p>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<app-footer></app-footer>

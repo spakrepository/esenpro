@@ -1,0 +1,40 @@
+<app-header></app-header>
+<app-banner *ngIf="getWindowWidth() > 768" [img]="'../../../assets/img/banner/about.jpg'" [header]="'Certifications'" [subHeader]="'Certifications'"></app-banner>
+<app-banner *ngIf="getWindowWidth() < 768" [img]="'../../../assets/img/banner/mob/about-us.jpg'" [header]="'Certifications'" [subHeader]="'Certifications'"></app-banner>
+
+
+<div class="about-wrapper">
+
+    <div class="container" *ngIf="certificateList">
+        <div class="row m-l-r-15">
+          <div class="col-lg-4 col-lg-4 col-md-4 col-sm-4 col-md-4 col-xs-12 certificate-box" *ngIf="certificateList.length == 1">
+          </div>
+            <div class="col-lg-4 col-lg-4 col-md-4 col-sm-4 col-md-4 col-xs-12 certificate-box" *ngFor="let item of certificateList">
+                <div>
+                    <a data-toggle="modal" data-target="#myModal" (click)="showPop(item)">
+                        <img src="../../../assets/img/certificate/{{item.ImgUrl}}" [alt]="item.ImgAlt" class="img-responsive" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-lg-4 col-md-4 col-sm-4 col-md-4 col-xs-12 certificate-box" *ngIf="certificateList.length == 1">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="myModal" role="dialog" *ngIf="popCertificate">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{popCertificate.ImgAlt}}</h4>
+            </div>
+            <div class="modal-body">
+                <img src="../../../assets/img/certificate/{{popCertificate.ImgUrl}}" [alt]="popCertificate.ImgAlt" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

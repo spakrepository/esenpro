@@ -1,0 +1,25 @@
+<app-header></app-header>
+<app-banner *ngIf="getWindowWidth() > 768"  [img]="'../../../assets/img/banner/service.jpg'" [header]="'Services'" [subHeader]="'Services'"></app-banner>
+<app-banner *ngIf="getWindowWidth() < 768" [img]="'../../../assets/img/banner/mob/services.jpg'" [header]="'Services'" [subHeader]="'Services'"></app-banner>
+
+
+<div class="service-wrapper">
+    <div class="container">
+        <div class="row icon-row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" *ngFor="let item of serviceList">
+              <strong  class="service-header" [innerHTML]="item.heading"></strong>
+                <div>
+                    <p *ngIf="item.detail">
+                        {{item.detail}}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<app-footer></app-footer>

@@ -1,0 +1,131 @@
+
+footer {
+    background-color: #E3E3E3;
+    width: 100%;
+    height: auto;
+    padding-top: 25px;
+
+    strong {
+        font-size: 20px;
+        color: #0079ad;
+        font-family: "robotobold";
+        letter-spacing: 1px;
+        padding: 15px 0 10px 0;
+        display: block;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        & li {
+            font-family: 'robotoregular';
+            line-height: 35px;
+            font-size: 16px;
+        }
+    }
+
+    .footer-links-table {
+        border-collapse: collapse;
+        width: 100%;
+
+        li {
+            cursor: pointer;
+        }
+
+        & > tr {
+
+            & > td:first-child {
+                border-left: 1px solid #969596;
+                padding-left: 15px;
+                padding-bottom: 10px;
+            }
+
+            & > td:last-child {
+                border-right: 1px solid #969596;
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    b {
+        font-family: 'robotoregular';
+        letter-spacing: 1px;
+        display: block;
+    }
+
+    p {
+        font-family: 'robotoregular';
+        margin-bottom: 10px;
+    }
+
+    .after-footer {
+        text-align: center;
+        padding:30px 0 30px 0;
+    }
+}
+
+.footer-transmission-logo {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  footer {
+    padding-top: 0;
+
+    .footer-links-table {
+      border-collapse: collapse;
+      width: 100%;
+
+      li {
+          cursor: pointer;
+      }
+
+      & > tr {
+
+          & > td:first-child {
+              border-left: 0px solid #969596;
+              padding-bottom: 10px;
+          }
+
+          & > td:last-child {
+              border-right: 0px solid #969596;
+          }
+      }
+  }
+
+  .after-footer {
+    padding: 0 0 10px 0;
+
+    & > p {
+      margin-bottom: 0;
+      text-align: left;
+    }
+  }
+
+  }
+
+  .footer-logo {
+    margin: auto;
+    display: none;
+  }
+
+  .footer-transmission-logo {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  footer {
+    strong {
+      padding: 15px 0 0px 0;
+    }
+
+    b {
+      margin-bottom: 8px;
+    }
+  }
+
+}
+

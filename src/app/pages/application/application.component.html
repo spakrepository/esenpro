@@ -1,0 +1,142 @@
+<app-header></app-header>
+<app-banner [img]="''" [header]="'Innovation & Application'" [subHeader]="'Career'"></app-banner>
+
+<div class="application-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 stickElement">
+                <ul class="left-links">
+                    <li *ngFor="let item of applicationList" [ngClass]="{active: currentActiveId == item.id}" (click)="selectApplication(item)">
+                        {{item.name}}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 main-category-wrapper">
+                <div *ngIf="application">
+                    <img *ngIf="application.largeImg" [src]="application.largeImg" [alt]="application.largeAlt" class="img-responsive" />
+                    <h3 *ngIf="application.name">{{application.name}}</h3>
+                    <div [innerHTML]="application.applicationDetail"></div>
+
+                    <h4>Features:</h4>
+
+                    <div class="feature-wrapper" *ngIf="application.powerRange">
+                        <div class="feature-list">
+                            <strong>Power Range</strong>
+                            <p>{{application.powerRange}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.rationRange">
+                        <div class="feature-list">
+                            <strong>Ration Range</strong>
+                            <p>{{application.rationRange}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.stage">
+                        <div class="feature-list">
+                            <strong>Stage</strong>
+                            <p>{{application.stage}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.drive">
+                        <div class="feature-list">
+                            <strong>Drive</strong>
+                            <p>{{application.drive}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.sizeRange">
+                        <div class="feature-list">
+                            <strong>Size Range</strong>
+                            <p>{{application.sizeRange}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.reductionRatioRange">
+                        <div class="feature-list">
+                            <strong>Reduction Ratio Range</strong>
+                            <p>{{application.reductionRatioRange}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.shaft">
+                        <div class="feature-list">
+                            <strong>Shaft</strong>
+                            <p>{{application.shaft}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.outputShaft">
+                        <div class="feature-list">
+                            <strong>Output Shaft</strong>
+                            <p>{{application.outputShaft}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.inputOutputShaft">
+                        <div class="feature-list">
+                            <strong>Input Output Shaft</strong>
+                            <p>{{application.inputOutputShaft}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.mounting">
+                        <div class="feature-list">
+                            <strong>Mounting</strong>
+                            <p>{{application.mounting}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.additionalAccessories">
+                        <div class="feature-list">
+                            <strong>Additional Accessories</strong>
+                            <p>{{application.additionalAccessories}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.type">
+                        <div class="feature-list">
+                            <strong>Additional Accessories</strong>
+                            <p>{{application.type}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.applications">
+                        <div class="feature-list">
+                            <strong>Applications</strong>
+                            <p>{{application.applications}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.accessories">
+                        <div class="feature-list">
+                            <strong>Accessories</strong>
+                            <p>{{application.accessories}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.lubrication">
+                        <div class="feature-list">
+                            <strong>Lubrication</strong>
+                            <p>{{application.lubrication}}</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-wrapper" *ngIf="application.screwSizeRange">
+                        <div class="feature-list">
+                            <strong>Screw Size Range</strong>
+                            <p>{{application.screwSizeRange}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

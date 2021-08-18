@@ -1,0 +1,115 @@
+<app-header></app-header>
+<app-banner *ngIf="getWindowWidth() > 768" [img]="'../../../assets/img/banner/about.jpg'" [header]="'Infrastructure'" [subHeader]="'Infrastructure'"></app-banner>
+<app-banner *ngIf="getWindowWidth() < 768" [img]="'../../../assets/img/banner/mob/about-us.jpg'" [header]="'Infrastructure'" [subHeader]="'Infrastructure'"></app-banner>
+
+<div class="carousel-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+          <div class="carousel-inner">
+            <div class="item" *ngFor="let item of infraCarousel; let i = index" [ngClass]="{'active': i == 0}">
+              <img src="../../../assets/img/infra/1/{{item.imgUrl}}" [alt]="item.altText" class="img-responsive" />
+            </div>
+          </div>
+
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="car-content">
+          <h3>State of the art in-house machining and grinding facilities</h3>
+          <ul>
+            <li>Engineering</li>
+            <li>Machining</li>
+            <li>Gear Grinding</li>
+            <li>Fabrication</li>
+            <li>Metrology and Calibration</li>
+            <li>Gear Testing & Checking</li>
+            <li>Tool Pre-Grinding for cutters</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-wrapper">
+  <div class="container infra-img-wrapper">
+     <ul class="infra-grid">
+       <li
+        *ngFor="let item of infrastructureList; let i = index"
+        appChangebgtextcolor
+        (click)="showInfraData(item)"
+        >
+        <ul>
+          <li><h3 *ngIf="item.name">{{item.name}}</h3></li>
+          <li>
+            <div>
+              <app-svg *ngIf="!(currentId == item.id)" [plusIcon]="true"></app-svg>
+              <app-svg *ngIf="currentId == item.id" [minusIcon]="true"></app-svg>
+            </div>
+          </li>
+        </ul>
+
+        <div *ngIf="currentInfraObj">
+          <div *ngIf="currentInfraObj.id == item.id">
+            <div class="pop-grid">
+              <div *ngFor="let item of currentInfraObj.item">
+                <img src="../../../assets/img/infra/1/{{item.imgUrl}}" [alt]="item.altText" class="img-responsive" />
+                <strong *ngIf="item.heading">{{item.heading}}</strong>
+                <p *ngIf="item.description">{{item.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       </li>
+     </ul>
+
+     <div *ngIf="false">
+       <ul class="infra-images-list">
+        <li>
+          <img src="../../../assets/img/infra/1/8.jpg" alt="infrastructure" class="img-responsive" />
+        </li>
+         <li>
+           <img src="../../../assets/img/infra/1/9.jpg" alt="infrastructure" class="img-responsive" />
+         </li>
+         <li>
+           <img src="../../../assets/img/infra/1/10.jpg" alt="infrastructure" class="img-responsive" />
+         </li>
+       </ul>
+     </div>
+
+  </div>
+</div>
+
+<!-- <div class="modal fade" id="myModal" role="dialog" *ngIf="currentInfraObj">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="pop-grid">
+          <div *ngFor="let item of currentInfraObj.item">
+            <img src="../../../assets/img/infra/1/{{item.imgUrl}}" [alt]="item.altText" class="img-responsive" />
+            <strong *ngIf="item.heading">{{item.heading}}</strong>
+            <p *ngIf="item.description">{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<app-footer></app-footer>

@@ -1,0 +1,570 @@
+@import './font.css';
+
+.book {
+  font-family: 'book';
+}
+
+.shadowToBody {
+  position: relative !important;
+  min-height: 100% !important;
+  top: 0px !important;
+  padding-right: 17px;
+  overflow: hidden;
+}
+
+
+
+.social-wrapper {
+  border-bottom: 2px solid red;
+  padding-bottom: 15px;
+}
+
+.social-icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 0;
+  margin-top: 10px;
+
+  &>li {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      svg {
+        fill: #0079ad;
+      }
+    }
+  }
+}
+
+svg {
+  width: 22px;
+  height: 22px;
+  fill: rgba(128, 128, 128, 0.8);
+}
+
+.social-table {
+  td {
+    &:last-child {
+      width: 160px;
+    }
+
+    #google_translate_element {
+      margin-left: 20px;
+      top: 6px;
+      position: relative;
+    }
+  }
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+.social-table {
+  width: auto;
+  max-width: none;
+  display: inline-block;
+}
+
+.header-border {
+  margin-top: -30px;
+}
+
+.mob {
+  display: none;
+}
+
+.network-img-wrapper {
+  position: relative;
+
+  & > div {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    cursor: pointer;
+
+    &.kaza-btn {
+      top: 21%;
+      right: 34%;
+    }
+
+    &.uzbek-btn {
+      top: 26%;
+      right: 35%;
+    }
+
+    &.iran-btn {
+      top: 31%;
+      right: 36%;
+    }
+
+    &.uae-btn {
+      top: 38%;
+      right: 38%;
+    }
+
+    &.turkey-btn {
+      top: 38%;
+      right: 38%;
+    }
+
+    &.turkey-btn {
+      top: 27%;
+      right: 43%;
+    }
+
+    &.hungary-btn {
+      top: 21%;
+      right: 46%;
+    }
+
+    &.belgium-btn {
+      top: 19%;
+      right: 52%;
+    }
+
+    &.brazil-btn {
+      bottom: 34%;
+      left: 24.5%;
+    }
+
+    &.north-america-btn {
+      top: 27.6%;
+      left: 13%;
+    }
+
+    &.italy-btn {
+      top: 23.6%;
+      left: 47.4%;
+    }
+
+    &.sweden-btn {
+      top: 12%;
+      left: 48%;
+    }
+
+    &.russia-btn {
+      top: 12%;
+      left: 70%;
+    }
+
+    &.tamilnadu-btn {
+      bottom: 6.5%;
+      left: 33.9%;
+    }
+
+    &.gujrat-btn {
+      bottom: 47.8%;
+      left: 14.7%;
+    }
+
+    &.bhilai-btn {
+      bottom: 44.8%;
+      left: 46%;
+    }
+
+    &.neyveli-btn {
+      bottom: 15%;
+      left: 37.8%;
+    }
+
+    &.andra-btn {
+      bottom: 23%;
+      left: 37.3%;
+    }
+
+    &.jharkhand-btn {
+      bottom: 51%;
+      left: 55.3%;
+    }
+
+  }
+
+  app-networkpop {
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    position: absolute;
+    div {
+      width: 295px;
+      min-height: 75px;
+      border: 1px solid #0079ad;
+      color: #fff;
+      display: flex;
+      display: -webkit-flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      background-color: #f3f3f3;
+      padding: 5px 5px;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      position: relative;
+      strong {
+        color: #0079ad;
+      }
+      p {
+        margin-bottom: 0;
+        color: #000;
+        font-weight: bolder;
+      }
+
+      b {
+        display: inline-block;
+        position: absolute;
+        top: calc(100% - 20px);
+        border-radius: 50px;
+        padding: 6px 10px;
+        border: 1px solid #fff;
+        background: #0079ad;
+        color: #fff;
+        min-width: 100px;
+        text-align: center;
+      }
+    }
+
+    &.kazakhstan {
+      top: 5%;
+      right: 22%;
+    }
+
+    &.uzbekistan {
+      top: 10%;
+      right: 23%;
+    }
+
+    &.iranpop {
+      top: 14%;
+      right: 24%;
+    }
+
+    &.uaepop {
+      top: 22%;
+      right: 27%;
+    }
+
+    &.turkeypop {
+      top: 11%;
+      right: 31%;
+    }
+
+    &.hungarypop {
+      top: 5%;
+      right: 34%;
+    }
+
+    &.belgiumpop {
+      top: 3%;
+      right: 40%;
+    }
+
+    &.brazilpop {
+      bottom: 42%;
+      left: 13%;
+    }
+
+    &.northamericapop {
+      top: 11%;
+      left: 1%;
+    }
+
+    &.italypop {
+      top: 7%;
+      left: 35%;
+    }
+
+    &.swedenpop {
+      top: -4%;
+      left: 36.2%;
+    }
+
+    &.russiapop {
+      top: -4%;
+      left: 58%;
+    }
+
+    &.tamilnadupop {
+      bottom: 11.5%;
+      left: 22%;
+    }
+
+    &.gujratpop {
+      bottom: 53%;
+      left: 3%;
+    }
+
+    &.bhilaipop {
+      bottom: 49.5%;
+      left: 34%;
+    }
+
+    &.neyvelipop{
+      bottom: 20%;
+      left: 26%;
+    }
+
+    &.andrapop {
+      bottom: 28%;
+      left: 25%;
+    }
+
+    &.jharkhandpop {
+      bottom: 56%;
+      left: 43%;
+    }
+
+    &.active {
+      opacity: 1;
+      z-index: 9999;
+    }
+
+  }
+
+  &>.magnifier {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 30px;
+    box-shadow: none !important;
+    display: none;
+    cursor: pointer;
+  }
+
+}
+
+.feature-wrapper {
+  .feature-list {
+    strong {
+      .plus, .minus {
+        .plussvg, .plussvg {
+          fill: #fff !important;
+        }
+      }
+
+      &:hover {
+        .plus, .minus {
+          .plussvg, .plussvg {
+            fill: #0079ad !important;
+          }
+        }
+      }
+
+      &.active {
+        .plus {
+          display: none;
+        }
+      }
+
+    }
+  }
+}
+
+
+
+
+@media(max-width: 768px) {
+
+  .desktop {
+    display: none;
+  }
+
+  .mob {
+    display: block;
+  }
+
+  .mob {
+    display: block;
+  }
+
+  .header-border {
+    margin-top: -15px;
+  }
+
+  .network-img-wrapper {
+
+    &>.magnifier {
+      display: block;
+    }
+  }
+
+  .banner-wrapper {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .innovation-wrapper {
+    padding-bottom: 20px !important;
+    padding-top: 0 !important;
+  }
+
+  .about-wrapper {
+    .container {
+      & > div {
+        padding-bottom: 0 !important;
+      }
+    }
+  }
+
+  .jouney-detail-wrapper {
+    h3 {
+      width: calc(100% - 15px);
+    }
+
+    .right-blue-bg {
+      min-height: 200px !important;
+    }
+  }
+
+  .complete-ul {
+    width: auto !important;
+    padding-left: 12px;
+    & > li {
+      margin-right: 8px !important;
+    }
+  }
+
+  .manu-top-ul {
+    & > li {
+      & > i {
+        top: 18px !important;
+      }
+    }
+  }
+
+  .dropdown-links {
+    &::after {
+      display: none;
+    }
+  }
+
+  .toggle-left-navigation {
+    img {
+      width: 35px !important;
+    }
+  }
+
+  .product-wrapper {
+    h3 {
+      padding-bottom: 0 !important;
+    }
+  }
+
+  .news-wrapper {
+    padding: 30px 0 0 0 !important;
+  }
+}
+
+
+.map {
+  width: 1024px;
+  max-width: 1024px;
+  min-width: 1024px;
+  margin: auto auto;
+}
+
+.network-mob {
+  padding: 20px 15px;
+  & > ul {
+    & > li {
+      & > a {
+        color: #000 !important;
+      }
+    }
+  }
+
+  .mob-network-wrapper {
+    app-mobnetwork {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+
+  .mob-network {
+    border: 1px solid #0079ad;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    padding: 5px 5px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+
+    & > strong {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      background-color: #0079ad;
+      color: #fff;
+      display: flex;
+      display: -webkit-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      & > span {
+        font-size: 30px;
+      }
+    }
+
+    & > div {
+      margin-left: 10px;
+      margin-left: 10px;
+      width: calc(100% - 80px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      & > strong, & > b, & > span {
+        display: block;
+      }
+
+      & > strong {
+        color: #0079ad;
+      }
+
+      & > b {
+        color: #008fcc;
+      }
+    }
+  }
+}
+
+.before-after-div {
+  padding-top: 30px;
+  .before-after-table {
+    width: 100%;
+    & > tr {
+      & > td {
+        padding-bottom: 20px;
+        text-align: center;
+        img {
+          display: block;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
